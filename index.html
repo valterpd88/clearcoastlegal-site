@@ -62,6 +62,17 @@ header{border-bottom:1px solid var(--border);}
 .big-mail:hover{opacity:0.75;}
 .locline{font-size:0.9rem;color:var(--text-muted);}
 
+.hook{font-family:'Archivo',sans-serif;font-weight:600;font-size:1.05rem;color:var(--accent);margin:0 0 16px;}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-family:'Archivo',sans-serif;font-weight:600;font-size:0.92rem;padding:13px 26px;border-radius:2px;text-decoration:none;border:none;cursor:pointer;transition:opacity .15s;}
+.btn:hover{opacity:0.85;}
+.nav-btn{padding:10px 18px;font-size:0.85rem;}
+.assess-form{margin-top:8px;max-width:440px;}
+.form-row{margin-bottom:16px;}
+.form-row label{display:block;font-family:'Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;}
+.form-row input,.form-row select{width:100%;font-family:'Archivo',sans-serif;font-size:0.95rem;padding:12px 14px;border:1px solid var(--border-strong);background:var(--bg);color:var(--text);border-radius:2px;}
+.form-row input:focus,.form-row select:focus{outline:2px solid var(--accent);outline-offset:1px;}
+.foot-row a{color:inherit;text-decoration:underline;text-underline-offset:2px;}
+
 .tile-divider{height:6px;background-color:var(--bg);background-image:repeating-linear-gradient(45deg, var(--accent) 0 1.5px, transparent 1.5px 8px),repeating-linear-gradient(-45deg, var(--accent) 0 1.5px, transparent 1.5px 8px);opacity:0.55;}
 
 .announce{background:color-mix(in srgb, var(--accent) 8%, var(--bg));border-bottom:1px solid var(--border);padding:12px 0;}
@@ -77,12 +88,12 @@ footer{padding:28px 0 40px;}
 <header>
   <div class="wrap navrow">
     <a class="wordmark" href="#top">Clear Coast<span>Legal &amp; Tax Advisors · Portugal</span></a>
-    <a class="mail-link" href="mailto:info@clearcoastlegal.com">info@clearcoastlegal.com</a>
+    <a class="btn nav-btn" href="#assessment">Book a Strategy Call</a>
   </div>
 </header>
 
 <div class="announce">
-  <div class="wrap"><strong>Full site launching soon.</strong> In the meantime, reach out directly — <a href="mailto:info@clearcoastlegal.com">info@clearcoastlegal.com</a>.</div>
+  <div class="wrap"><strong>Full site launching soon.</strong> In the meantime, <a href="#assessment">book a strategy call</a> to get started.</div>
 </div>
 
 <main id="top">
@@ -93,9 +104,11 @@ footer{padding:28px 0 40px;}
 
   <section class="intro wrap">
     <div class="eyebrow">Cross-Border Legal &amp; Tax — Ericeira, Portugal</div>
+    <p class="hook">Enjoy the sanctuary. We handle the bureaucracy.</p>
     <h1>Seamless relocation &amp; tax compliance for U.S. citizens moving to Portugal.</h1>
     <p class="lede">Clear Coast advises American citizens relocating to Portugal on the three problems that most often derail a move: immigration paperwork, real estate risk, and cross-border tax exposure.</p>
-    <p class="body">The practice is built on two licenses held by one advisor — Licensed Portuguese Legal Practitioner &amp; Cross-Border Tax Specialist — so a client's immigration filing, property purchase, and tax position are handled by a single, accountable point of contact, based in Ericeira and working with clients across the United States.</p>
+    <p class="body">Led by Valter Domingues, the practice is built on two licenses held by one advisor — Licensed Portuguese Legal Practitioner &amp; Cross-Border Tax Specialist. Your immigration filing, property purchase, and tax position are handled by a single, accountable point of contact, based in Ericeira and working with clients across the United States. All services are provided on a transparent, flat-fee basis — no hidden hourly rates.</p>
+    <a href="#assessment" class="btn" style="margin-top:8px;">Book a Strategy Call →</a>
   </section>
 
   <section class="practice wrap">
@@ -103,18 +116,39 @@ footer{padding:28px 0 40px;}
     <div class="practice-list">
       <div class="practice-row"><span class="name">Immigration &amp; Residency</span><span class="desc">D7 and D8 visa applications, prepared for AIMA and consulate filing.</span></div>
       <div class="practice-row"><span class="name">Real Estate Due Diligence</span><span class="desc">Title and registry review completed before you sign or wire funds.</span></div>
-      <div class="practice-row"><span class="name">Cross-Border Tax Planning</span><span class="desc">Coordinated U.S. and Portuguese filing positions, treaty relief, life after NHR.</span></div>
+      <div class="practice-row"><span class="name">Cross-Border Tax Planning</span><span class="desc">Coordinated U.S. and Portuguese filing positions, treaty relief, and life after NHR.</span></div>
     </div>
   </section>
 
-  <section class="contact wrap" id="contact">
+  <section class="contact wrap" id="assessment">
     <div class="eyebrow">Get in Touch</div>
     <h2>Tell us where you're starting from.</h2>
-    <p>Write directly with a short description of your situation — current location, goal, and rough timeline — and we'll follow up to schedule a first conversation.</p>
-    <div class="contact-block">
-      <a class="big-mail" href="mailto:info@clearcoastlegal.com">info@clearcoastlegal.com</a>
-      <span class="locline">Ericeira, Portugal — serving U.S. clients nationwide</span>
-    </div>
+    <p>Answer three quick questions and we'll open a pre-filled email ready to send — no blank page required.</p>
+    <form class="assess-form" id="assessForm">
+      <div class="form-row">
+        <label for="q-location">Current Location (U.S. State)</label>
+        <input type="text" id="q-location" placeholder="e.g. California" required>
+      </div>
+      <div class="form-row">
+        <label for="q-goal">Primary Goal</label>
+        <select id="q-goal">
+          <option>Retire in Portugal (D7)</option>
+          <option>Work Remotely (D8)</option>
+          <option>Real Estate Investment</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="q-timeline">Estimated Timeline</label>
+        <select id="q-timeline">
+          <option>Within 3 months</option>
+          <option>3–6 months</option>
+          <option>6–12 months</option>
+          <option>Just exploring</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">Start Your Assessment →</button>
+    </form>
+    <span class="locline" style="display:block;margin-top:20px;">Ericeira, Portugal — serving U.S. clients nationwide</span>
   </section>
 
   <div class="tile-divider"></div>
@@ -122,7 +156,24 @@ footer{padding:28px 0 40px;}
 
 <footer>
   <div class="wrap foot-row">
-    <span>© 2026 Clear Coast Legal &amp; Tax.</span>
+    <span>© 2026 Clear Coast Legal &amp; Tax. — <a href="mailto:info@clearcoastlegal.com">info@clearcoastlegal.com</a></span>
     <span class="disclaimer">This page does not constitute legal or tax advice. Engagement terms are confirmed in a signed letter of engagement.</span>
   </div>
 </footer>
+
+<script>
+document.getElementById('assessForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var loc = document.getElementById('q-location').value || 'Not specified';
+  var goal = document.getElementById('q-goal').value;
+  var timeline = document.getElementById('q-timeline').value;
+  var subject = encodeURIComponent('Strategy Call Request — ' + goal);
+  var body = encodeURIComponent(
+    'Current Location: ' + loc + '\n' +
+    'Primary Goal: ' + goal + '\n' +
+    'Estimated Timeline: ' + timeline + '\n\n' +
+    'Additional details:\n'
+  );
+  window.location.href = 'mailto:info@clearcoastlegal.com?subject=' + subject + '&body=' + body;
+});
+</script>
