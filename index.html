@@ -28,13 +28,13 @@
 
 :root{
   --bg:#FFFFFF; --text:#14161A; --text-muted:#5B6168;
-  --accent:#1E4C8A; --border:rgba(20,22,26,0.12); --border-strong:rgba(20,22,26,0.24);
+  --accent:#16345E; --border:rgba(20,22,26,0.12); --border-strong:rgba(20,22,26,0.24);
 }
 @media (prefers-color-scheme: dark){
-  :root{ --bg:#0B0D10; --text:#F2F1ED; --text-muted:#9AA0A6; --accent:#6C97D6; --border:rgba(242,241,237,0.14); --border-strong:rgba(242,241,237,0.28); }
+  :root{ --bg:#0B0D10; --text:#F2F1ED; --text-muted:#9AA0A6; --accent:#5C8CC4; --border:rgba(242,241,237,0.14); --border-strong:rgba(242,241,237,0.28); }
 }
-:root[data-theme="dark"]{ --bg:#0B0D10; --text:#F2F1ED; --text-muted:#9AA0A6; --accent:#6C97D6; --border:rgba(242,241,237,0.14); --border-strong:rgba(242,241,237,0.28); }
-:root[data-theme="light"]{ --bg:#FFFFFF; --text:#14161A; --text-muted:#5B6168; --accent:#1E4C8A; --border:rgba(20,22,26,0.12); --border-strong:rgba(20,22,26,0.24); }
+:root[data-theme="dark"]{ --bg:#0B0D10; --text:#F2F1ED; --text-muted:#9AA0A6; --accent:#5C8CC4; --border:rgba(242,241,237,0.14); --border-strong:rgba(242,241,237,0.28); }
+:root[data-theme="light"]{ --bg:#FFFFFF; --text:#14161A; --text-muted:#5B6168; --accent:#16345E; --border:rgba(20,22,26,0.12); --border-strong:rgba(20,22,26,0.24); }
 
 *{box-sizing:border-box;}
 body{margin:0;background:var(--bg);color:var(--text);font-family:'Archivo',-apple-system,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
@@ -49,6 +49,8 @@ h1,h2{font-family:'Archivo',sans-serif;font-weight:700;text-wrap:balance;margin:
 
 header{border-bottom:1px solid var(--border);}
 .navrow{display:flex;align-items:center;justify-content:space-between;padding:22px clamp(20px,4vw,40px);gap:20px;flex-wrap:wrap;}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--accent);}
+.brand-mark{flex:none;width:34px;height:34px;}
 .wordmark{font-family:'Caslon Text',serif;font-weight:700;font-size:1.3rem;color:var(--accent);text-decoration:none;line-height:1;}
 .wordmark span{display:block;font-family:'Plex Mono',monospace;font-weight:400;font-size:0.56rem;letter-spacing:0.16em;color:var(--text-muted);margin-top:6px;text-transform:uppercase;}
 .mail-link{font-family:'Plex Mono',monospace;font-size:0.82rem;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border-strong);padding-bottom:2px;white-space:nowrap;}
@@ -111,7 +113,13 @@ footer{padding:28px 0 40px;}
 
 <header>
   <div class="wrap navrow">
-    <a class="wordmark" href="#top">Clear Coast<span>Legal &amp; Tax Advisors · Portugal</span></a>
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <path d="M78,22 A44,44 0 1 0 78,98" stroke="currentColor" stroke-width="9"></path>
+        <path d="M74,44 A22,22 0 1 0 74,76" stroke="currentColor" stroke-width="9"></path>
+      </svg>
+      <span class="wordmark">Clear Coast<span>Legal &amp; Tax Advisors · Portugal</span></span>
+    </a>
     <a class="btn nav-btn" href="#assessment">Book a Strategy Call</a>
   </div>
 </header>
